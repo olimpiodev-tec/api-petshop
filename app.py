@@ -1,6 +1,8 @@
 from flask import Flask
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 products = [
     {"id": 1, "product_name": "Coleira", "product_description": "Coleira para cachorro de pequeno porte", "product_price": 23.90, "product_photo": "", "stock_quantity": 26},
