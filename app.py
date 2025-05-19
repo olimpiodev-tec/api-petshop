@@ -61,5 +61,16 @@ products = [
 def get_products():
     return products
 
+@app.route('/products/<int:p_id>', methods=['GET'])
+def get_product(p_id):
+    product = {}
+
+    for p in products:
+        if p_id == p.get('id'):
+            product = p
+            break
+
+    return product
+
 if __name__ == '__main__':
     app.run(debug=True)
